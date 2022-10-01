@@ -13,6 +13,8 @@
     },
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "strictNullChecks": false,
+    "strict": false,
     "plugins": [
       {
         "name": "typescript-plugin-css-modules"
