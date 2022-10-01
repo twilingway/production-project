@@ -5,7 +5,7 @@ import s from './AppLink.module.scss';
 
 export enum AppLinkTheme {
   PRIMARY = 'primary',
-  SECONDARY = 'secondary'
+  SECONDARY = 'secondary',
 }
 
 interface IAppLinkProps extends LinkProps {
@@ -24,7 +24,8 @@ export const AppLink: FC<IAppLinkProps> = (props) => {
   return (
     <Link
       to={to}
-      className={classNames(s.AppLink, {}, [className, s[theme]])}
+      className={classNames(s.appLink, {}, [className, s[theme]])}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     >
       {children}

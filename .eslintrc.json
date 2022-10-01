@@ -3,7 +3,12 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/jsx-runtime", "plugin:react/recommended", "airbnb"],
+  "extends": [
+    "plugin:react/jsx-runtime",
+    "plugin:react/recommended",
+    "airbnb",
+    "plugin:i18next/recommended"
+  ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -12,23 +17,26 @@
     "sourceType": "module",
     "project": ["./tsconfig.json"]
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint", "i18next"],
   "rules": {
     "strict": "error",
     "semi": ["error", "always"],
     "@typescript-eslint/semi": ["error", "always"],
     "quotes": ["error", "single"],
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": "warn",
-    // "prettier/prettier": ["error", { "endOfLine": "auto" }],
-    // "import/extensions": [
-    //   "error",
-    //   "never",
-    //   { "svg": "always", "json": "always", "css": "always", "scss": "always" }
-    // ],
-    // "import/no-extraneous-dependencies": "warn",
-    "@typescript-eslint/strict-boolean-expressions": "warn",
-    // allow jsx syntax in js files (for next.js project)
+    "@typescript-eslint/comma-dangle": [
+      "error",
+      {
+        "arrays": "never",
+        "objects": "always-multiline",
+        "imports": "never",
+        "exports": "never",
+        "functions": "never",
+        "enums": "always"
+      }
+    ],
+    // TODO: настроить
+    "@typescript-eslint/strict-boolean-expressions": "off",
     "react/jsx-filename-extension": [
       2,
       { "extensions": [".js", ".jsx", "tsx"] }
@@ -56,8 +64,11 @@
         // "ImportDeclaration": "never",
         "ExportDeclaration": { "multiline": true, "minProperties": 3 }
       }
+    ],
+    "i18next/no-literal-string": [
+      "error",
+      { "markupOnly": true, "ignoreAttribute": ["to"] }
     ]
-    // "no-undef": 1
   },
   "globals": {
     "__IS_DEV__": true
