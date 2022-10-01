@@ -4,12 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": [
-    "plugin:react/jsx-runtime",
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:i18next/recommended"
-  ],
+  "extends": ["plugin:react/jsx-runtime", "plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -31,17 +26,14 @@
         "arrays": "never",
         "objects": "always-multiline",
         "imports": "never",
-        "exports": "never",
+        "exports": "always-multiline",
         "functions": "never",
         "enums": "always"
       }
     ],
     // TODO: настроить
     "@typescript-eslint/strict-boolean-expressions": "off",
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", "tsx"] }
-    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", "tsx"] }],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
@@ -56,20 +48,18 @@
     "@typescript-eslint/no-unused-vars": "warn",
     // TODO: убрать
     "@typescript-eslint/strict-boolean-expression": "off",
-
-    "object-curly-newline": [
-      "error",
-      {
-        // "ObjectExpression": "always",
-        // "ObjectPattern": { "multiline": true },
-        // "ImportDeclaration": "never",
-        "ExportDeclaration": { "multiline": true, "minProperties": 3 }
-      }
-    ],
-    "i18next/no-literal-string": [
-      "error",
-      { "markupOnly": true, "ignoreAttribute": ["to"] }
-    ]
+    "object-curly-newline": "off",
+    // "object-curly-newline": [
+    //   "error",
+    //   {
+    //     // "ObjectExpression": "always",
+    //     // "ObjectPattern": { "multiline": true },
+    //     // "ImportDeclaration": "never",
+    //     "ExportDeclaration": { "multiline": true }
+    //   }
+    // ],
+    "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["to"] }],
+    "max-len": ["error", { "ignoreComments": true, "code": 120 }]
   },
   "globals": {
     "__IS_DEV__": true
