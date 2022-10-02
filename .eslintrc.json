@@ -5,13 +5,13 @@
     "jest": true
   },
   "extends": ["plugin:react/jsx-runtime", "plugin:react/recommended", "airbnb", "plugin:i18next/recommended"],
-  "overrides": [],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": { "jsx": true },
     "ecmaVersion": "latest",
-    "sourceType": "module",
-    "project": ["./tsconfig.json"]
+    "sourceType": "module"
+    // "project": ["./tsconfig.json"]
   },
   "plugins": ["react", "@typescript-eslint", "i18next"],
   "rules": {
@@ -49,16 +49,8 @@
     // TODO: убрать
     "@typescript-eslint/strict-boolean-expression": "off",
     "object-curly-newline": "off",
-    // "object-curly-newline": [
-    //   "error",
-    //   {
-    //     // "ObjectExpression": "always",
-    //     // "ObjectPattern": { "multiline": true },
-    //     // "ImportDeclaration": "never",
-    //     "ExportDeclaration": { "multiline": true }
-    //   }
-    // ],
-    "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["to"] }],
+
+    "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["to", "data-testid"] }],
     "max-len": ["error", { "ignoreComments": true, "code": 120 }],
     "arrow-body-style": ["error", "as-needed"],
     "react/jsx-wrap-multilines": [
@@ -76,5 +68,13 @@
   },
   "globals": {
     "__IS_DEV__": true
-  }
+  },
+  "overrides": [
+    {
+      "files": ["**/src/**/*.test.{ts,tsx}"],
+      "rules": {
+        "i18next/no-literal-string": "off"
+      }
+    }
+  ]
 }

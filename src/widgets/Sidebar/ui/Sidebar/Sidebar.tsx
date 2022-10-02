@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -18,12 +19,10 @@ export function Sidebar({ className }: ISidebarProps) {
   };
 
   return (
-    <div
-      className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [
-        className
-      ])}
-    >
-      <Button onClick={handleToggle}>{t('toggle')}</Button>
+    <div data-testid="sidebar" className={classNames(s.sidebar, { [s.collapsed]: collapsed }, [className])}>
+      <Button data-testid="sidebar-toggle" onClick={handleToggle}>
+        {t('toggle')}
+      </Button>
       <div className={s.switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={s.lang} />
