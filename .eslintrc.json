@@ -59,7 +59,20 @@
     //   }
     // ],
     "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["to"] }],
-    "max-len": ["error", { "ignoreComments": true, "code": 120 }]
+    "max-len": ["error", { "ignoreComments": true, "code": 120 }],
+    "arrow-body-style": ["error", "as-needed"],
+    "react/jsx-wrap-multilines": [
+      "error",
+      {
+        "declaration": "parens",
+        "assignment": "parens",
+        "return": "parens",
+        "arrow": "parens",
+        "condition": "parens",
+        "logical": "parens"
+        // "prop": "parens-new-line"
+      }
+    ]
   },
   "globals": {
     "__IS_DEV__": true
