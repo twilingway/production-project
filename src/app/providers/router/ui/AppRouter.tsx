@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
-import { useTranslation } from 'react-i18next';
 
-import { Routes, Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { routerConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'shared/ui/PageLoader';
