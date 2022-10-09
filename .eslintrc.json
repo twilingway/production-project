@@ -64,7 +64,8 @@
         "logical": "parens"
         // "prop": "parens-new-line"
       }
-    ]
+    ],
+    "implicit-arrow-linebreak": "off"
   },
   "globals": {
     "__IS_DEV__": true
