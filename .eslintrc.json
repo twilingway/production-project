@@ -46,8 +46,8 @@
     "no-underscore-dangle": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    // TODO: убрать
-    "@typescript-eslint/strict-boolean-expression": "off",
+    // // TODO: убрать
+    // "@typescript-eslint/strict-boolean-expression": "off",
     "object-curly-newline": "off",
 
     "i18next/no-literal-string": ["error", { "markupOnly": true, "ignoreAttribute": ["to", "data-testid"] }],

@@ -1,10 +1,11 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Язык": "English",
+  "Язык": "Русский",
   "loading": "Loading...",
   "page not fount": "Page not fount",
   "something wrong": "Something Wrong!",
   "refresh page": "Refresh page",
-  "trow error": "Trow Error"
+  "trow error": "Trow Error",
+  "short lang": "Ru"
 }

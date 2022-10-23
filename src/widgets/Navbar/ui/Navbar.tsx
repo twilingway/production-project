@@ -12,14 +12,7 @@ export function Navbar({ className }: INavbarProps) {
   const { t } = useTranslation('navbar');
   return (
     <div className={classNames(s.navbar, {}, [className])}>
-      <div className={s.links}>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/" className={s.mainLink}>
-          {t('main')}
-        </AppLink>
-        <AppLink theme={AppLinkTheme.SECONDARY} to="/about">
-          {t('about')}
-        </AppLink>
-      </div>
+      <div className={s.links}>/</div>
     </div>
   );
 }
