@@ -5,7 +5,7 @@ const appDirectory = path.resolve(__dirname, '../../');
 console.log('appDirectory', appDirectory);
 const getStories = () =>
   glob.sync(`${appDirectory}/src/**/*.stories.@(js|jsx|ts|tsx)`, {
-    ignore: `${appDirectory}/node_modules/**/*.*`,
+    ignore: `${appDirectory}/src/**/*.*`,
   });
 
 module.exports = {
