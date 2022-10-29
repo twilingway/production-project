@@ -58,12 +58,11 @@ export const Modal = (props: IModalProps) => {
   const mods: Record<string, boolean> = {
     [s.opened]: isOpen,
     [s.isClosing]: isClosing,
-    [s[theme]]: true,
   };
 
   return (
     <Portal>
-      <div className={classNames(s.modal, mods, [className])}>
+      <div className={classNames(s.modal, mods, [className, theme])}>
         <div className={s.overlay} tabIndex={0} role="button" onClick={handleClose}>
           <div className={s.content} tabIndex={0} role="button" onClick={handleContentClick}>
             {children}
