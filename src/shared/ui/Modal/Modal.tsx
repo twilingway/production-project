@@ -1,5 +1,4 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import { useTheme } from 'app/providers/ThemeProvider';
 import React, { ReactNode, useCallback, useEffect, useRef, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
@@ -20,7 +19,6 @@ export const Modal = (props: IModalProps) => {
 
   const [isClosing, setIsClosing] = useState<boolean>(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
-  const { theme } = useTheme();
 
   const handleClose = useCallback(() => {
     if (onClose) {
@@ -62,7 +60,7 @@ export const Modal = (props: IModalProps) => {
 
   return (
     <Portal>
-      <div className={classNames(s.modal, mods, [className, theme])}>
+      <div className={classNames(s.modal, mods, [className])}>
         <div className={s.overlay} tabIndex={0} role="button" onClick={handleClose}>
           <div className={s.content} tabIndex={0} role="button" onClick={handleContentClick}>
             {children}
