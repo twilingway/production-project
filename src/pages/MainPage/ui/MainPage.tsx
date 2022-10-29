@@ -8,13 +8,12 @@ import { Input } from 'shared/ui';
 
 const MainPage: FC = () => {
   const { t } = useTranslation('main');
-  const [value, setValue] = useState<string>('');
+
   return (
     <div>
       <BugButton />
       {t('main page')}
       {/* <Counter /> */}
-      <Input value={value} onChange={setValue} placeholder="Введите текст" />
     </div>
   );
 };
