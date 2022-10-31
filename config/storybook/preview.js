@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react';
 
 import { Theme } from '../../src/app/providers/ThemeProvider';
 import {
+  I18nextDecorator,
   RouterDecorator,
   StyleDecorator,
   ThemeDecorator,
@@ -18,7 +19,22 @@ export const parameters = {
   },
 };
 
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'en', title: 'English' },
+        { value: 'ru', title: 'Russian' },
+      ],
+      title: 'Translate',
+    },
+  },
+};
+
+addDecorator(I18nextDecorator);
 addDecorator(StyleDecorator);
-// addDecorator(TranslationDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
