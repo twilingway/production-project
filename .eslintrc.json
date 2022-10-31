@@ -20,17 +20,18 @@
     "@typescript-eslint/semi": ["error", "always"],
     "quotes": ["error", "single"],
     "comma-dangle": "off",
-    "@typescript-eslint/comma-dangle": [
-      "error",
-      {
-        "arrays": "never",
-        "objects": "always-multiline",
-        "imports": "always-multiline",
-        "exports": "always-multiline",
-        "functions": "never",
-        "enums": "always"
-      }
-    ],
+    "@typescript-eslint/comma-dangle": "off",
+    // "@typescript-eslint/comma-dangle": [
+    //   "error",
+    //   {
+    //     "arrays": "never",
+    //     "objects": "always-multiline",
+    //     "imports": "always-multiline",
+    //     "exports": "always-multiline",
+    //     "functions": "never",
+    //     "enums": "always"
+    //   }
+    // ],
     // TODO: настроить
     "@typescript-eslint/strict-boolean-expressions": "off",
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", "tsx"] }],
