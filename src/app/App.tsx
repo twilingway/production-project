@@ -1,5 +1,7 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import { Suspense, useState } from 'react';
+import { userAction } from 'entities/User';
+import { Suspense, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Modal } from 'shared/ui/Modal/Modal';
@@ -9,6 +11,11 @@ import { Sidebar } from 'widgets/Sidebar';
 import { AppRouter } from './providers/router';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userAction.initAuthData());
+  }, [dispatch]);
   return (
     <div className={classNames('app', {}, [])}>
       <Suspense fallback="">

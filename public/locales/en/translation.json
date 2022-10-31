@@ -7,5 +7,10 @@
   "something wrong": "Something Wrong!",
   "refresh page": "Refresh page",
   "trow error": "Trow Error",
-  "short lang": "Ru"
+  "short lang": "Ru",
+  "Wrong username or password": "Wrong username or password",
+  "logOut": "Logout",
+  "Input username": "Username",
+  "formAutoriation": "Form autorisation",
+  "Input password": "Input password"
 }

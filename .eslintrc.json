@@ -25,7 +25,7 @@
       {
         "arrays": "never",
         "objects": "always-multiline",
-        "imports": "never",
+        "imports": "always-multiline",
         "exports": "always-multiline",
         "functions": "never",
         "enums": "always"

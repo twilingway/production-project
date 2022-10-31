@@ -21,17 +21,19 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme;
   square?: boolean;
   size?: ButtonSize;
+  disabled?: boolean;
 }
 
 export const Button: FC<IButtonProps> = (props) => {
-  const { className, children, theme, square, size = ButtonSize.M, ...otherProps } = props;
+  const { className, children, theme, square, size = ButtonSize.M, disabled, ...otherProps } = props;
 
-  const mods: Record<string, boolean> = { [s.square]: square };
+  const mods: Record<string, boolean> = { [s.square]: square, [s.disabled]: disabled };
 
   return (
     <button
       type="button"
       className={classNames(s.button, mods, [className, s[theme], s[size]])}
+      disabled={disabled}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     >

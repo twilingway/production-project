@@ -7,5 +7,9 @@
   "something wrong": "Произошла непредвиденная ошибка",
   "refresh page": "Обновить страницу",
   "trow error": "Вызвать ошибку",
-  "short lang": "En"
+  "short lang": "En",
+  "Wrong username or password": "Не правильный логин или пароль",
+  "Input username": "Пользователь",
+  "formAutoriation": "Форма авторизации",
+  "Input password": "Введите пароль"
 }
