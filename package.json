@@ -16,9 +16,9 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
-    "test:ui": "npx loki test",
+    "test:ui": "npx loki test --chromeDockerImage yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:ok": "npx loki approve",
-    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static",
+    "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeDockerImage yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js",
     "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
@@ -118,7 +118,6 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
-    },
-    "chromeDockerUseCopy": true
+    }
   }
 }
