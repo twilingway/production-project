@@ -15,6 +15,7 @@ export function buildWebpackConfig(options: IBuildOptions): Configuration {
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
+      publicPath: 'auto',
     },
     plugins: buildPlugins(options),
     module: {

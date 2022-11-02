@@ -15,7 +15,7 @@ i18n
     lng: 'en',
     fallbackLng: 'en',
     debug: __IS_DEV__,
-
+    ns: ['main', 'about', 'navbar', 'sidebar', 'translation'],
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
