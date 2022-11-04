@@ -73,7 +73,11 @@
 
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "error",
-    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }]
+    "react/jsx-no-useless-fragment": ["error", { "allowExpressions": true }],
+    "react/prop-types": 0,
+    "operator-linebreak": ["error", "after"],
+
+    "indent": "off"
   },
   "globals": {
     "__IS_DEV__": true
