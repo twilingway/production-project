@@ -8,8 +8,8 @@ import s from './LoginModal.module.scss';
 
 interface ILoginModalProps {
   className?: string;
-  isOpen?: boolean;
-  onClose?: () => void;
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export const LoginModal = (props: ILoginModalProps) => {

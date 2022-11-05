@@ -33,7 +33,12 @@ export function buildLoaders({ isDev }: IBuildOptions): RuleSetRule[] {
 
   const typescriptLoader = {
     test: /\.tsx?$/,
-    use: 'ts-loader',
+    use: {
+      loader: 'ts-loader',
+      // options: {
+      //   transpileOnly: true,
+      // },
+    },
     exclude: /node_modules/,
   };
   return [fileLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
