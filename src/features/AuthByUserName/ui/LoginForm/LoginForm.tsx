@@ -34,14 +34,14 @@ const LoginForm = memo(({ className, onSuccess }: ILoginFormProps) => {
   const error = useSelector(getLoginError);
 
   const handleChangeUsername = useCallback(
-    (value: string) => {
-      dispatch(loginAction.setUsername(value));
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(loginAction.setUsername(event.target.value));
     },
     [dispatch]
   );
   const handleChangePassword = useCallback(
-    (value: string) => {
-      dispatch(loginAction.setPassword(value));
+    (event: React.ChangeEvent<HTMLInputElement>) => {
+      dispatch(loginAction.setPassword(event.target.value));
     },
     [dispatch]
   );

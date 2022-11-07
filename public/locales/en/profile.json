@@ -2,5 +2,9 @@
   "profile": "Profile",
   "edit": "Edit",
   "firstName": "First Name",
-  "lastName": "Last Name"
+  "lastName": "Last Name",
+  "errorText": "Try update page",
+  "errorTitle": "Error is loading frofile",
+  "cancel": "Cancel",
+  "save": "Save"
 }

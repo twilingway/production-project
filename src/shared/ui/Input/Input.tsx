@@ -1,18 +1,19 @@
 import React, { InputHTMLAttributes, memo, SyntheticEvent, useEffect, useRef, useState } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import s from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface IInputProps extends HTMLInputProps {
   className?: string;
-  value?: string;
-  onChange?: (value: string) => void;
+  value?: string | number;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
   autofocus?: boolean;
+  readonly?: boolean;
 }
 
 export const Input = memo((props: IInputProps) => {
-  const { className, value, onChange, type = 'text', placeholder, autofocus, ...otherProps } = props;
+  const { className, value, onChange, type = 'text', placeholder, autofocus, readonly = false, ...otherProps } = props;
 
   const ref = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState<boolean>(false);
@@ -33,7 +34,7 @@ export const Input = memo((props: IInputProps) => {
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange?.(event.target.value);
+    onChange?.(event);
     setCaretPosition(event.target.value.length);
   };
 
@@ -44,8 +45,12 @@ export const Input = memo((props: IInputProps) => {
     }
   }, [autofocus]);
 
+  const mods: Mods = {
+    [s.readonly]: readonly,
+  };
+
   return (
-    <div className={classNames(s.inputWrapper, {}, [className])}>
+    <div className={classNames(s.inputWrapper, mods, [className])}>
       {placeholder && <div className={s.placeholder}>{`${placeholder}>`}</div>}
       <div className={s.caretWrapper}>
         <input
@@ -57,6 +62,7 @@ export const Input = memo((props: IInputProps) => {
           onFocus={handleFocus}
           onBlur={handleBlur}
           onSelect={handleSelect}
+          readOnly={readonly}
           {...otherProps}
         />
         {isFocused && <span className={s.caret} style={{ left: `${caretPosition * 9}px` }} />}

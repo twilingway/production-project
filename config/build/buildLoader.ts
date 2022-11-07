@@ -23,7 +23,7 @@ export function buildLoaders({ isDev }: IBuildOptions): RuleSetRule[] {
   const cssLoader = buildCssLoader(isDev);
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    test: /\.(png|jpe?g|gif|woff2|woff|webp)$/i,
     use: [
       {
         loader: 'file-loader',
