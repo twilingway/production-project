@@ -1,6 +1,9 @@
+import { Country, CountrySelect } from 'entities/Country';
+import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
+
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Avatar, Loader } from 'shared/ui';
+import { Avatar, Loader, Select } from 'shared/ui';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { ITextTheme, Text, TextAlign } from 'shared/ui/Text/Text';
@@ -14,10 +17,12 @@ interface ProfileCardProps {
   isLoading?: boolean;
   readonly?: boolean;
   onChangeForm: (value: { [key: string]: string | number }) => void;
+  onChangeCurrency: (currency: Currency) => void;
+  onChangeCountry: (country: Country) => void;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
-  const { className, data, error, isLoading, readonly, onChangeForm } = props;
+  const { className, data, error, isLoading, readonly, onChangeForm, onChangeCurrency, onChangeCountry } = props;
   const { t } = useTranslation('profile');
 
   if (isLoading) {
@@ -95,6 +100,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
               name="avatar"
               onChange={handleChange}
             />
+            <CurrencySelect
+              value={data?.currency}
+              onChange={onChangeCurrency}
+              className={cls.input}
+              readonly={readonly}
+            />
+            <CountrySelect value={data?.country} onChange={onChangeCountry} readonly={readonly} className={cls.input} />
           </fieldset>
         </form>
       </div>

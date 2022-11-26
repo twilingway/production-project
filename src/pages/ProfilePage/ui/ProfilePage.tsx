@@ -1,3 +1,5 @@
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
 import {
   fetchProfileData,
   getProfileData,
@@ -44,6 +46,21 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     },
     [dispatch]
   );
+  const handleChangeCurrency = useCallback(
+    (currency: Currency) => {
+      console.log('currency :>> ', currency);
+      dispatch(profileActions.updateProfile({ currency }));
+    },
+    [dispatch]
+  );
+
+  const handleChangeCountry = useCallback(
+    (country: Country) => {
+      console.log('Country :>> ', country);
+      dispatch(profileActions.updateProfile({ country }));
+    },
+    [dispatch]
+  );
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
@@ -55,6 +72,8 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
           error={error}
           readonly={readonly}
           onChangeForm={handleChangeForm}
+          onChangeCurrency={handleChangeCurrency}
+          onChangeCountry={handleChangeCountry}
         />
       </div>
     </DynamicModuleLoader>
