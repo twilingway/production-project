@@ -6,5 +6,9 @@
   "errorText": "Try update page",
   "errorTitle": "Error is loading frofile",
   "cancel": "Cancel",
-  "save": "Save"
+  "save": "Save",
+  "wrong age": "Wrong Age",
+  "wrong user data": "First name and Last name required",
+  "wrong data": "Wrong data",
+  "server error": "Server error"
 }
