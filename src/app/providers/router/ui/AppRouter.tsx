@@ -10,14 +10,16 @@ import { PageLoader } from 'shared/ui/PageLoader';
 function AppRouter() {
   const isAuth = useSelector(getUserAuthData);
 
-  const routes = useMemo(() => {
-    return Object.values(routerConfig).filter((route) => {
-      if (route.authOnly && !isAuth) {
-        return false;
-      }
-      return true;
-    });
-  }, [isAuth]);
+  const routes = useMemo(
+    () =>
+      Object.values(routerConfig).filter((route) => {
+        if (route.authOnly && !isAuth) {
+          return false;
+        }
+        return true;
+      }),
+    [isAuth]
+  );
 
   return (
     <Routes>

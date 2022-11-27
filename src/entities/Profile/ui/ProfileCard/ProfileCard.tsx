@@ -3,8 +3,7 @@ import { Currency, CurrencySelect } from 'entities/Currency';
 import { useTranslation } from 'react-i18next';
 
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { Avatar, Loader, Select } from 'shared/ui';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Avatar, Loader } from 'shared/ui';
 import { Input } from 'shared/ui/Input/Input';
 import { ITextTheme, Text, TextAlign } from 'shared/ui/Text/Text';
 import { Profile } from '../../model/types/profile';
@@ -46,6 +45,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
   const mods: Mods = {
     [cls.editing]: !readonly,
   };
+
+  if (error) {
+    return (
+      <div className={classNames(cls.ProfileCard, {}, [className, cls.error])}>
+        <Text
+          theme={ITextTheme.ERROR}
+          title={t('Произошла ошибка при загрузке профиля')}
+          text={t('Попробуйте обновить страницу')}
+          align={TextAlign.CENTER}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className={classNames(cls.profileCard, mods, [className])}>

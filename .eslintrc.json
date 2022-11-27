@@ -55,11 +55,22 @@
       "error",
       {
         "markupOnly": true,
-        "ignoreAttribute": ["to", "data-testid", "reducerName"],
-        "jsx-attributes": {
-          "include": [],
-          "exclude": ["className", "styleName", "style", "type", "key", "id", "width", "height", "name"]
-        }
+        "ignoreAttribute": [
+          "className",
+          "styleName",
+          "style",
+          "type",
+          "key",
+          "id",
+          "width",
+          "height",
+          "name",
+          "to",
+          "data-testid",
+          "reducerName",
+          "label",
+          "alt"
+        ]
       }
     ],
     "max-len": ["error", { "ignoreComments": true, "code": 120 }],
@@ -89,7 +100,8 @@
   },
   "globals": {
     "__IS_DEV__": true,
-    "__API__": true
+    "__API__": true,
+    "__PROJECT__": true
   },
   "overrides": [
     {

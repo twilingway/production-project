@@ -10,12 +10,13 @@ interface IAvatarProps {
 }
 
 export const Avatar = ({ className, src, size = 100, alt = '' }: IAvatarProps) => {
-  const styles = useMemo<CSSProperties>(() => {
-    return {
+  const styles = useMemo<CSSProperties>(
+    () => ({
       width: size,
       height: size,
-    };
-  }, [size]);
+    }),
+    [size]
+  );
 
   return <img alt={alt} src={src} style={styles} className={classNames(s.avatar, {}, [className])} />;
 };

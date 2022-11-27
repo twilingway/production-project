@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { userAction } from 'entities/User';
+import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUserName } from './loginByUserName';
 
@@ -43,7 +43,7 @@ describe('loginByUserName', () => {
     thunk.api.get.mockReturnValue(Promise.resolve({ data: userValue }));
     const result = await thunk.callThunk({ username: '123', password: '123' });
 
-    expect(thunk.dispatch).toHaveBeenCalledWith(userAction.setAuthData(userValue));
+    expect(thunk.dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
     expect(thunk.api.post).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');

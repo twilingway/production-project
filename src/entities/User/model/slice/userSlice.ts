@@ -24,5 +24,5 @@ export const userSlice = createSlice({
   },
 });
 
-export const { actions: userAction } = userSlice;
+export const { actions: userActions } = userSlice;
 export const { reducer: userReducer } = userSlice;

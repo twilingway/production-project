@@ -1,5 +1,5 @@
 import { useTheme } from 'app/providers/ThemeProvider';
-import { userAction } from 'entities/User';
+import { userActions } from 'entities/User';
 import { Suspense, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
@@ -14,7 +14,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(userAction.initAuthData());
+    dispatch(userActions.initAuthData());
   }, [dispatch]);
   return (
     <div className={classNames('app', {}, [])}>

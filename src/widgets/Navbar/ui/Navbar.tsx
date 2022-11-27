@@ -1,4 +1,4 @@
-import { getUserAuthData, userAction } from 'entities/User';
+import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUserName';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -28,7 +28,7 @@ export const Navbar = memo(({ className }: INavbarProps) => {
   }, []);
 
   const handleLogout = useCallback(() => {
-    dispatch(userAction.logout());
+    dispatch(userActions.logout());
   }, [dispatch]);
 
   if (authData) {

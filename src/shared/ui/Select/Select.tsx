@@ -19,13 +19,15 @@ interface ISelectProps {
 export const Select = memo((props: ISelectProps) => {
   const { className, label, options, value, onChange, readonly } = props;
 
-  const optionList = useMemo(() => {
-    return options?.map((opt) => (
-      <option className={s.option} key={opt.value} value={opt.value}>
-        {opt.content}
-      </option>
-    ));
-  }, [options]);
+  const optionList = useMemo(
+    () =>
+      options?.map((opt) => (
+        <option className={s.option} key={opt.value} value={opt.value}>
+          {opt.content}
+        </option>
+      )),
+    [options]
+  );
 
   const mods: Mods = {};
 
