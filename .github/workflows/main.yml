@@ -34,10 +34,7 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: loki update
-        run: npx loki update
-        if: always()
-      - name: loki test
-        run: npx loki test --chromeDockerImage yukinying/chrome-headless-browser-stable:100.0.4896.127
+        run: npm run loki:update
         if: always()
       - name: screenshot testing
         run: npm run test:ui:ci
