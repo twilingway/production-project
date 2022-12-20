@@ -36,3 +36,9 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
         if: always()
+        name: make report
+        uses: actions/upload-artifact&v3
+        with:
+          name: my-artifact 
+          path: .loki/
+        if: failure()
