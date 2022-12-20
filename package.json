@@ -18,7 +18,6 @@
     "storybook:build": "build-storybook -c ./config/storybook",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "npx loki test --chromeDockerImage yukinying/chrome-headless-browser-stable:100.0.4896.127",
-    "loki:update": "loki update",
     "test:ui:ok": "npx loki approve",
     "test:ui:ci": "loki --requireReference --reactUri file:./storybook-static --chromeDockerImage yukinying/chrome-headless-browser-stable:100.0.4896.127",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
